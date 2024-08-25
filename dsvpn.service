@@ -2,7 +2,7 @@
 Description=Dead Simple VPN Server
 
 [Service]
-ExecStart=~/dsvpn server ~/vpn.key auto 2222
+ExecStart=/root/dsvpn/dsvpn server /root/dsvpn/vpn.key auto 2222
 Restart=always
 RestartSec=10
 
