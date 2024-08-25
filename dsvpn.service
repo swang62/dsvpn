@@ -1,0 +1,10 @@
+[Unit]
+Description=Dead Simple VPN Server
+
+[Service]
+ExecStart=~/dsvpn server ~/vpn.key auto 2222
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=network.target
