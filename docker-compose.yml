@@ -1,0 +1,13 @@
+services:
+  dsvpn:
+    build: .
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "2222:443"
+    command: ["server", "vpn.key", "auto"]
+    # command: "tail -f /dev/null"
+    restart: unless-stopped
+    volumes:
+      - ./vpn.key:/vpn.key
