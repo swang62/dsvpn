@@ -1,6 +1,6 @@
-# ![DSVPN](https://raw.github.com/jedisct1/dsvpn/master/logo.png)
+# Dead Simple VPN
 
-[DSVPN](https://github.com/jedisct1/dsvpn) is a Dead Simple VPN, designed to address the most common use case for using a VPN:
+This repo is based on [DSVPN](https://github.com/jedisct1/dsvpn) aka Dead Simple VPN, designed to address the most common use case for using a VPN:
 
 ```text
 [client device] ---- (untrusted/restricted network) ---- [vpn server] ---- [the Internet]
