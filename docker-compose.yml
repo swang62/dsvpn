@@ -1,12 +1,10 @@
 services:
   dsvpn:
     build: .
-    devices:
-      - "/dev:/dev"
     cap_add:
       - NET_ADMIN
-    privileged: "true"
-    network_mode: "host"
+    privileged: true
+    network_mode: host
     command: ["server", "vpn.key", "auto", "2222"]
     restart: unless-stopped
     volumes:
