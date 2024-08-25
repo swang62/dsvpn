@@ -1,12 +1,13 @@
 services:
   dsvpn:
     build: .
-    privileged: true
+    devices:
+      - "/dev/net/tun:/dev/net/tun"
     cap_add:
       - NET_ADMIN
-    ports:
-      - "2222:443"
-    command: ["server", "vpn.key", "auto"]
+    privileged: true
+    network_mode: host
+    command: ["server", "vpn.key", "auto", "2222"]
     restart: unless-stopped
     volumes:
       - ./vpn.key:/vpn.key
