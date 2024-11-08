@@ -6,7 +6,7 @@ This repo is based on [DSVPN](https://github.com/jedisct1/dsvpn) aka Dead Simple
 [client device] ---- (network) ---- [vpn server] ---- [Internet]
 ```
 
-## Installation
+## How to Install
 
 This method only works on linux based systems. DSVPN uses a shared secret (same key for client and server).
 
@@ -26,7 +26,7 @@ echo 'HK940OkWcFqSmZXnCQ1w6jhQMZm0fZoEhQOOpzJ/l3w=' | base64 --decode > vpn.key
 
 ## Server setup
 
-Make sure port 2222 is open in your firewall settings. Using a non-standard port makes it a bit more flexible to use.
+Make sure port 2222 is open in your firewall settings. Using a non-standard port makes it a bit more flexible to keep other ports open. However, if your network is extremely locked down, use port 443.
 
 ```sh
 # Activate the server-side binary
@@ -39,17 +39,6 @@ systemctl enable dsvpn.service
 systemctl start dsvpn.service
 
 # Check to see if the service is active
-systemctl status dsvpn
-```
-
-Or as a local service:
-
-```sh
-cp dsvpn.service /etc/systemd/system/
-systemctl enable dsvpn.service
-systemctl start dsvpn.service
-
-#Check to see if it's working
 systemctl status dsvpn
 ```
 
